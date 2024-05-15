@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FrontEnd.Kalender;
 
 namespace FrontEnd
 {
-    internal class transitionLogin
+    public class transitionLogin
     {
         public enum State { START, LOGIN, LOGOUT,GUEST, LOGGEDIN, LOGGEDOUT, END, REGISTER };
         public enum Trigger { START, LOGIN, LOGOUT, LOGGEDIN, LOGGEDOUT,REGISTER,REGISTERED, END };
 
-        public enum Role { GUEST, USER, ADMIN };
+        public enum Role { GUEST, USER, ADMIN, TEST };
 
 
 
@@ -70,7 +71,14 @@ namespace FrontEnd
         public static String getRole(Role input)
         {
             String[] roles = { "GUEST", "USER", "ADMIN" };
-            return roles[(int)input];
+            try
+            {
+                return roles[(int)input];
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }
