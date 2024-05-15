@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using backend.Controllers;
 using System;
 using System.Collections.Generic;
@@ -77,7 +77,6 @@ namespace backend.Controllers.ResponseTest
                         content = "comment 1",
                         created_at = DateTime.Now.ToString()
                     }]
-                
             };
             var content = new StringContent(JsonConvert.SerializeObject(forum), Encoding.UTF8, "application/json");
             var response = client.PostAsync("https://localhost:7238/api/Forum", content).Result;
