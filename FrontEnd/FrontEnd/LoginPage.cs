@@ -173,7 +173,7 @@ namespace FrontEnd
         public user Login(String username, String password)
         {
             client<user> client = new client<user>();
-            var rsult = client.Post("https://localhost:7284/api/User/Login", new user { username = username, password = password }); // fetch in clinet
+            var rsult = client.Post("https://localhost:7238/api/User/Login", new user { username = username, password = password }); // fetch in clinet
 
             try
             {
@@ -193,7 +193,7 @@ namespace FrontEnd
         public user Register(String username, String password, String role)
         {
             client<user> client = new client<user>();
-            string rsult = client.Post("https://localhost:7284/api/User/Register", new user { username = username, password = password, role = role }); // fetch in clinet
+            string rsult = client.Post("https://localhost:7238/api/User/Register", new user { username = username, password = password, role = role }); // fetch in clinet
             try
             {
                 if (rsult != null)
