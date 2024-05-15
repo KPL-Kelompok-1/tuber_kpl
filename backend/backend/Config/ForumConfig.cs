@@ -8,7 +8,7 @@ namespace backend.Config
         public static List<Forum> configs { get; set; }
         public const string filepath = @"forum.json";
 
-        static ForumConfig() // Use static constructor to load on class initialization
+        public ForumConfig() // Use static constructor to load on class initialization
         {
             try
             {
@@ -49,7 +49,7 @@ namespace backend.Config
             else {
                 try
                 {
-                    String path = Path.Combine(Directory.GetCurrentDirectory(), "..", "backend", filepath);
+                    String path = Path.Combine(Directory.GetCurrentDirectory(), filepath);
                     String jsonString = File.ReadAllText(path);
                     configs = JsonConvert.DeserializeObject<List<Forum>>(jsonString); // ubah list jadi String array
                     if (configs == null)
@@ -101,7 +101,7 @@ namespace backend.Config
                         throw new Exception("No data to save");
                     }
                 }
-                String path = Path.Combine(Directory.GetCurrentDirectory(), "..", "backend", filepath);
+                String path = Path.Combine(Directory.GetCurrentDirectory(), filepath);
                 String jsonString = JsonConvert.SerializeObject(data ?? configs);
                 File.WriteAllText(path, jsonString);
             }
