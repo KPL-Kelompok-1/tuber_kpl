@@ -51,7 +51,7 @@ namespace backend.Config
                 {
                     String path = Path.Combine(Directory.GetCurrentDirectory(), "..", "backend", filepath);
                     String jsonString = File.ReadAllText(path);
-                    configs = JsonConvert.DeserializeObject<List<Forum>>(jsonString);
+                    configs = JsonConvert.DeserializeObject<List<Forum>>(jsonString); // ubah list jadi String array
                     if (configs == null)
                     {
                         throw new Exception("No data found");

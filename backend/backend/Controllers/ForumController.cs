@@ -27,50 +27,61 @@ namespace backend.Controllers
         [HttpPost]
         public ActionResult Post([FromBody] Forum forum)
         {
-            if (forum == null)
+            try
             {
-                return BadRequest("Invalid forum data provided.");
-            }
-            if (string.IsNullOrEmpty(forum.title) || forum.title.Length > 50)
-            {
-                return BadRequest("Title is required and cannot exceed 50 characters.");
-            }
+                if (forum == null)
+                {
+                    throw new Exception("Invalid forum data provided.");
+                }
+                if (string.IsNullOrEmpty(forum.title) || forum.title.Length > 10)
+                {
+                    throw new Exception("Title is required and cannot exceed 10 characters.");
+                }
 
-            if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 100)
-            {
-                return BadRequest("Content is required and cannot exceed 100 characters.");
-            }
+                if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 20)
+                {
+                    throw new Exception("Content is required and cannot exceed 20 characters.");
+                }
 
-            ForumConfig.Add(forum);
-            ForumConfig.SaveConfig();
-            return Ok();
+                ForumConfig.Add(forum);
+                ForumConfig.SaveConfig();
+                return Ok();
+            }
+            catch (Exception e) {
+                return BadRequest(e.Message);
+            }
+           
         }
 
         [HttpPut("{id}/update")]
         public ActionResult Put( int id, [FromBody] ForumRequest forum)
         {
-            if (forum == null)
-            {
-                return BadRequest("Invalid forum data provided.");
-            }
+            try {
+                if (forum == null)
+                {
+                    throw new Exception("Invalid forum data provided.");
+                }
+                if (string.IsNullOrEmpty(forum.title) || forum.title.Length > 10)
+                {
+                    throw new Exception("Title is required and cannot exceed 10 characters.");
+                }
 
-            if (string.IsNullOrEmpty(forum.title) || forum.title.Length > 10)
-            {
-                return BadRequest("Title is required and cannot exceed 50 characters.");
-            }
+                if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 20)
+                {
+                    throw new Exception("Content is required and cannot exceed 20 characters.");
+                }
 
-            if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 100)
+                Forum f = new Forum();
+                f.title = forum.title;
+                f.content = forum.content;
+                f.created_at = forum.created_at;
+                ForumConfig.Edit(f, id);
+                ForumConfig.SaveConfig();
+                return Ok();
+            }catch (Exception e)
             {
-                return BadRequest("Content is required and cannot exceed 100 characters.");
+                return BadRequest(e.Message);
             }
-
-            Forum f = new Forum();
-            f.title = forum.title;
-            f.content = forum.content;
-            f.created_at = forum.created_at;
-            ForumConfig.Edit(f,id);
-            ForumConfig.SaveConfig();
-            return Ok();
         }
         [HttpDelete("{id}/delete")]
         public ActionResult Delete(int id)
