@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1706.10
@@ -11,7 +10,7 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E3B74851-5214-4AAE-868C-9F80540F499E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+	{E3B74851-5214-4AAE-868C-9F80540F499E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3B74851-5214-4AAE-868C-9F80540F499E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3B74851-5214-4AAE-868C-9F80540F499E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3B74851-5214-4AAE-868C-9F80540F499E}.Release|Any CPU.Build.0 = Release|Any CPU
@@ -20,6 +19,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F0A0CBDF-6674-43A8-9097-6033554A477E}
+SolutionGuid = {F0A0CBDF-6674-43A8-9097-6033554A477E}
 	EndGlobalSection
 EndGlobal
