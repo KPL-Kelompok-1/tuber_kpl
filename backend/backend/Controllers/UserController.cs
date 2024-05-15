@@ -43,6 +43,12 @@ namespace backend.Controllers
             return userConfig.LoadConfig();
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<List<Forum>> GetById(int id)
+        {
+            return ForumConfig.LoadConfig(id);
+        }
+
         [HttpPost("register")]
         public ActionResult<user> Post([FromBody] user user)
         {
