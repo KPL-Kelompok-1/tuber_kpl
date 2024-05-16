@@ -11,19 +11,12 @@ namespace FrontEnd
         public enum Month
         {
             Januari, Februari, Maret, April, Mei, Juni, Juli, Agustus, September,
-            Oktober, November, Desember,Test
+            Oktober, November, Desember
         }
         public static int GetDays(Month month)
         {
             int[] daysPerMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-            try
-            {
-                return daysPerMonth[(int)month];
-            } catch (Exception e)
-            {
-                return -1;
-            }
-            
+            return daysPerMonth[(int)month];
         }
     }
 }

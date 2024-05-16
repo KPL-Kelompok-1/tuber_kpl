@@ -82,7 +82,7 @@ namespace FrontEnd
         private void listForum()
         {
             client<Model.Forum> client = new client<Model.Forum>();
-            List<Model.Forum> forums = client.Get("https://localhost:7238/api/Forum");
+            List<Model.Forum> forums = client.Get("https://localhost:7284/api/Forum");
             foreach (var forum in forums)
             {
                 Console.WriteLine("ID: " + forum.id);
@@ -97,7 +97,7 @@ namespace FrontEnd
             Console.Write("ID: ");
             int id = Convert.ToInt32(Console.ReadLine());
             client<Model.Forum> client = new client<Model.Forum>();
-            List<Model.Forum> forums = client.Get("https://localhost:7238/api/Forum/" + id);
+            List<Model.Forum> forums = client.Get("https://localhost:7284/api/Forum/" + id);
             try
             {
                 if (forums == null)
@@ -135,7 +135,7 @@ namespace FrontEnd
                 created_at = DateTime.Now.ToString(),
             };
             client<Model.Forum> client = new client<Model.Forum>();
-            string result = client.Put("https://localhost:7238/api/Forum/" + id, forum);
+            string result = client.Put("https://localhost:7284/api/Forum/" + id, forum);
             Console.WriteLine(result);
         }
 
@@ -144,7 +144,7 @@ namespace FrontEnd
             Console.Write("ID: ");
             int id = Convert.ToInt32(Console.ReadLine());
             client<Model.Forum> client = new client<Model.Forum>();
-            string result = client.Delete("https://localhost:7238/api/Forum/" + id);
+            string result = client.Delete("https://localhost:7284/api/Forum/" + id);
             Console.WriteLine(result);
         }
     }
