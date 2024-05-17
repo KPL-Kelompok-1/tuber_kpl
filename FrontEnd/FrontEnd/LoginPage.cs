@@ -60,6 +60,7 @@ namespace FrontEnd
             }
         }
 
+
         private void DisplayMenu(transitionLogin.State state)
         {
             Console.WriteLine(currentState.ToString());

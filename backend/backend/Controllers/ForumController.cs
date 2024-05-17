@@ -21,6 +21,10 @@ namespace backend.Controllers
         [HttpGet("{id}")]
         public ActionResult<List<Forum>> GetById(int id)
         {
+            int i = 0;
+            while (i < 1000000000000000) {
+                i++;
+            }
             return ForumConfig.LoadConfig(id);
         }
 
