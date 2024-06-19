@@ -11,12 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using FrontEnd;
 
 namespace GUI_KPL
 {
     public partial class RegisForm : Form
     {
         private HttpClient _client;
+        private User currentUser;
 
         public RegisForm()
         {
@@ -40,28 +42,15 @@ namespace GUI_KPL
                 return;
             }
 
-            var newUser = new User
-            {
-                id = 0,
-                username = username,
-                password = password,
-                role = "user"
-            };
-
             try
             {
-                var jsonContent = JsonConvert.SerializeObject(newUser);
-                var content = new StringContent(jsonContent, System.Text.Encoding.UTF8, "application/json");
-
-                var response = await _client.PostAsync("https://localhost:7238/api/User/Register", content);
-         
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string responseData = await response.Content.ReadAsStringAsync();
-                    var registeredUser = JsonConvert.DeserializeObject<User>(responseData);
-                    
+                User user = Register(username, password, "user");
+                if (user != null)
+                {    
                     MessageBox.Show("Registrasi berhasil!");
+                    Forum forumForm = new Forum(this.currentUser);
+                    forumForm.Show();
+                    this.Hide();
 
                 }
                 else
@@ -74,6 +63,26 @@ namespace GUI_KPL
                 MessageBox.Show("Terjadi kesalahan: " + ex.Message);
             }
         }
+
+        private User Register(String username, String password, String role)
+        {
+            client<User> client = new client<User>();
+            string rsult = client.Post("https://localhost:7238/api/User/Register", new User { username = username, password = password, role = role }); // fetch in clinet
+            try
+            {
+                if (rsult != null)
+                {
+                    this.currentUser = JsonConvert.DeserializeObject<User>(rsult);
+                    return currentUser;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            return null;
+        }
+
 
         private void RegisForm_FormClosing(object sender, FormClosingEventArgs e)
         {

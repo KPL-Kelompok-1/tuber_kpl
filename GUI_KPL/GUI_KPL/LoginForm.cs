@@ -9,17 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrontEnd;
 
 namespace GUI_KPL
 {
     public partial class LoginForm : Form
     {
         private HttpClient _client;
+        private User currentUser;
 
         public LoginForm()
         {
             InitializeComponent();
             _client = new HttpClient();
+            this.currentUser = null;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -38,29 +41,14 @@ namespace GUI_KPL
                 return;
             }
 
-            var loginData = new User
-            {
-                id = 0,
-                username = username,
-                password = password,
-                role = ""
-            };
-
             try
             {
-                var jsonContent = JsonConvert.SerializeObject(loginData);
-                var content = new StringContent(jsonContent, System.Text.Encoding.UTF8, "application/json");
+                User result = Login(username, password);
 
-                var response = await _client.PostAsync("https://localhost:7238/api/User/Login", content);
-
-                if (response.IsSuccessStatusCode)
+                if (result != null)
                 {
-                    string responseData = await response.Content.ReadAsStringAsync();
-                    var loggedInUser = JsonConvert.DeserializeObject<User>(responseData);
-
-                    MessageBox.Show("Login berhasil!");
-
-                    Forum forumForm = new Forum();
+                    MessageBox.Show("Login berhasil. Selamat datang " + this.currentUser.username);
+                    Forum forumForm = new Forum(this.currentUser);
                     forumForm.Show();
                     this.Hide();
                 }
@@ -75,6 +63,35 @@ namespace GUI_KPL
             }
 
         }
+
+
+        private User Login(String username, String password)
+        {
+
+            client<User> client = new client<User>();
+            try
+            {
+                var rsult = client.Post("https://localhost:7238/api/User/Login", new User { username = username, password = password, role = "Admin" });
+                //MessageBox.Show(rsult);
+                this.currentUser = JsonConvert.DeserializeObject<User>(rsult);
+                if (currentUser != null)
+                { 
+                    return currentUser;
+                }
+                else
+                {
+                    throw new Exception("Invalid credential");
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error during login: " + e.Message);
+            }
+
+            return null;
+        }
+
+
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _client.Dispose();

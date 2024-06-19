@@ -21,10 +21,10 @@ namespace backend.Controllers
         [HttpGet("{id}")]
         public ActionResult<List<Forum>> GetById(int id)
         {
-            int i = 0;
+          /* int i = 0;
             while (i < 1000000000000000) {
                 i++;
-            }
+            }*/
             return ForumConfig.LoadConfig(id);
         }
 
@@ -37,9 +37,9 @@ namespace backend.Controllers
                 {
                     throw new Exception("Invalid forum data provided.");
                 }
-                if (string.IsNullOrEmpty(forum.title) || forum.title.Length > 10)
+                if (string.IsNullOrEmpty(forum.title) || forum.title.Length > 100)
                 {
-                    throw new Exception("Title is required and cannot exceed 10 characters.");
+                    throw new Exception("Title is required and cannot exceed 100 characters.");
                 }
 
                 if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 20)
