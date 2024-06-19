@@ -8,7 +8,7 @@ namespace backend.Config
         public static List<Forum> configs { get; set; }
         public const string filepath = @"forum.json";
 
-        public ForumConfig() // Use static constructor to load on class initialization
+        public ForumConfig()
         {
             try
             {
