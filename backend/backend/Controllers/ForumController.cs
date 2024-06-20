@@ -42,9 +42,9 @@ namespace backend.Controllers
                     throw new Exception("Title is required and cannot exceed 100 characters.");
                 }
 
-                if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 20)
+                if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 1000)
                 {
-                    throw new Exception("Content is required and cannot exceed 20 characters.");
+                    throw new Exception("Content is required and cannot exceed 1000 characters.");
                 }
 
                 ForumConfig.Add(forum);
@@ -65,14 +65,14 @@ namespace backend.Controllers
                 {
                     throw new Exception("Invalid forum data provided.");
                 }
-                if (string.IsNullOrEmpty(forum.title) || forum.title.Length > 10)
+                if (string.IsNullOrEmpty(forum.title) || forum.title.Length > 100)
                 {
-                    throw new Exception("Title is required and cannot exceed 10 characters.");
+                    throw new Exception("Title is required and cannot exceed 100 characters.");
                 }
 
-                if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 20)
+                if (string.IsNullOrEmpty(forum.content) || forum.content.Length > 1000)
                 {
-                    throw new Exception("Content is required and cannot exceed 20 characters.");
+                    throw new Exception("Content is required and cannot exceed 1000 characters.");
                 }
 
                 Forum f = new Forum();

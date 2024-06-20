@@ -73,7 +73,7 @@ namespace GUI_KPL
 
         private void btn_del_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Forum_Load(object sender, EventArgs e)
@@ -95,7 +95,32 @@ namespace GUI_KPL
 
         private void btn_del_Click_1(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Pilih forum yang akan dihapus");
+                return;
+            }
 
+            try
+            {
+                int id = (int)listBox1.SelectedItem;
+                MessageBox.Show("Anda akan menghapus forum dengan id " + id);
+                client<Model.Forum> client = new client<Model.Forum>();
+                string result = client.Delete("https://localhost:7238/api/Forum/" + id + "/delete");
+                if (result.Length > 0)
+                {
+                    MessageBox.Show(result);
+                }
+                else
+                {
+                    MessageBox.Show("Forum berhasil dihapus", "Sukses");
+                    this.listForum();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message);
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -105,7 +130,7 @@ namespace GUI_KPL
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(this.currentUser);
             dashboard.Show();
             this.Hide();
         }

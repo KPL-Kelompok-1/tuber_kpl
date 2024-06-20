@@ -12,11 +12,9 @@ namespace GUI_KPL
 {
     public partial class Dashboard : Form
     {
-        private User currentUser;
-        public Dashboard(User u)
+        public Dashboard()
         {
             InitializeComponent();
-            this.currentUser = u;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,7 +44,7 @@ namespace GUI_KPL
 
         private void label6_Click(object sender, EventArgs e)
         {
-            Forum forum1 = new Forum(this.currentUser);
+            Forum forum1 = new Forum();
             forum1.Show();
             this.Hide();
 
@@ -71,14 +69,14 @@ namespace GUI_KPL
 
         private void label5_Click(object sender, EventArgs e)
         {
-            profile profil = new profile(this.currentUser);
+            profile profil = new profile();
             profil.Show();
             this.Hide();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            profile profil = new profile(this.currentUser);
+            profile profil = new profile();
             profil.Show();
             this.Hide();
         }

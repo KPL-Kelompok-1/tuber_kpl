@@ -45,11 +45,16 @@ namespace GUI_KPL
                 client<Model.Forum> client = new client<Model.Forum>();
                 string result = client.Post("https://localhost:7238/api/Forum", forum);
 
-                //MessageBox.Show(result);
-
-                MessageBox.Show("Berhasil membuat diskusi baru", "Sukses");
-                DiskusiSaved?.Invoke(nama, asalDesa, pertanyaan);
-                this.Close();
+                if (result.Length > 0)
+                {
+                    MessageBox.Show(result);
+                }
+                else
+                {
+                    MessageBox.Show("Berhasil membuat diskusi baru", "Sukses");
+                    DiskusiSaved?.Invoke(nama, asalDesa, pertanyaan);
+                    this.Close();
+                }
             }
             catch (Exception ez)
             {

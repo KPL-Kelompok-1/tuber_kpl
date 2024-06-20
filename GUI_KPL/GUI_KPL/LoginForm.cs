@@ -48,8 +48,8 @@ namespace GUI_KPL
                 if (result != null)
                 {
                     MessageBox.Show("Login berhasil. Selamat datang " + this.currentUser.username);
-                    Forum forumForm = new Forum(this.currentUser);
-                    forumForm.Show();
+                    Dashboard dash = new Dashboard(this.currentUser);
+                    dash.Show();
                     this.Hide();
                 }
                 else
