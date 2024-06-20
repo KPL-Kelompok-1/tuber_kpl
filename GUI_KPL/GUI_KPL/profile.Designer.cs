@@ -41,10 +41,10 @@
             this.input_password = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,10 +74,10 @@
             this.button2.BackColor = System.Drawing.Color.CadetBlue;
             this.button2.Font = new System.Drawing.Font("Lucida Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(76, 409);
+            this.button2.Location = new System.Drawing.Point(37, 391);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 36);
+            this.button2.Size = new System.Drawing.Size(171, 42);
             this.button2.TabIndex = 15;
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = false;
@@ -88,7 +88,7 @@
             this.btn_del.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_del.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_del.ForeColor = System.Drawing.Color.White;
-            this.btn_del.Location = new System.Drawing.Point(444, 404);
+            this.btn_del.Location = new System.Drawing.Point(437, 391);
             this.btn_del.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(129, 42);
@@ -113,7 +113,7 @@
             this.btn_update.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_update.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(619, 404);
+            this.btn_update.Location = new System.Drawing.Point(612, 391);
             this.btn_update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(127, 42);
@@ -129,7 +129,7 @@
             this.input_username.Location = new System.Drawing.Point(424, 279);
             this.input_username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.input_username.Name = "input_username";
-            this.input_username.Size = new System.Drawing.Size(382, 26);
+            this.input_username.Size = new System.Drawing.Size(354, 26);
             this.input_username.TabIndex = 21;
             // 
             // label3
@@ -149,7 +149,7 @@
             this.input_password.Location = new System.Drawing.Point(424, 327);
             this.input_password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.input_password.Name = "input_password";
-            this.input_password.Size = new System.Drawing.Size(382, 26);
+            this.input_password.Size = new System.Drawing.Size(354, 26);
             this.input_password.TabIndex = 23;
             // 
             // label4
@@ -168,15 +168,15 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // pictureBox2
+            // pictureBox3
             // 
-            this.pictureBox2.Image = global::GUI_KPL.Properties.Resources.profile;
-            this.pictureBox2.Location = new System.Drawing.Point(457, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(158, 161);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox3.Image = global::GUI_KPL.Properties.Resources.profile;
+            this.pictureBox3.Location = new System.Drawing.Point(444, 92);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(158, 161);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -199,7 +199,7 @@
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(832, 510);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.input_password);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.input_username);
@@ -218,7 +218,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.profile_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -239,6 +239,6 @@
         private System.Windows.Forms.TextBox input_password;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

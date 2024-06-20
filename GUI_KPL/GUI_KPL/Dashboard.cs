@@ -53,5 +53,49 @@ namespace GUI_KPL
             profil.Show();
             this.Hide();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            profile profil = new profile(this.currentUser);
+            profil.Show();
+            this.Hide();
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            Forum forum1 = new Forum(this.currentUser);
+            forum1.Show();
+            this.Hide();
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Anda ingin keluar dari aplikasi?", "Konfirmasi Keluar", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+
+                LoginForm form2 = new LoginForm();
+                form2.Show();
+            }
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            profile profil = new profile(this.currentUser);
+            profil.Show();
+            this.Hide();
+        }
     }
 }

@@ -174,5 +174,44 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle 126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
