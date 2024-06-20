@@ -24,6 +24,10 @@ namespace GUI_KPL
             this.currentUser = user;
         }
 
+        public Forum()
+        {
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Anda ingin keluar dari aplikasi?", "Konfirmasi Keluar", MessageBoxButtons.YesNo);
@@ -51,18 +55,15 @@ namespace GUI_KPL
             foreach (var forum in forums)
             {
                 listBox1.Items.Add(forum.id);
-                 listBox1.Items.Add(forum.title);
-                 listBox1.Items.Add(forum.content);
+                listBox1.Items.Add(forum.title);
+                listBox1.Items.Add(forum.content);
                 listBox1.Items.Add("");
             }
         }
 
         private void InputForm_DiskusiSaved(string nama, string asalDesa, string pertanyaan)
         {
-          
-           
             this.listForum();
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,6 +85,28 @@ namespace GUI_KPL
         {
             profile profileForm = new profile(this.currentUser);
             profileForm.Show();
+            this.Hide();
+        }
+
+        private void btn_forum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_del_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
             this.Hide();
         }
     }

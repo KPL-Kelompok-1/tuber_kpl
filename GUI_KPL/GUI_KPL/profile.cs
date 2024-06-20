@@ -125,5 +125,17 @@ namespace GUI_KPL
 
           
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Anda ingin keluar dari aplikasi?", "Konfirmasi Keluar", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+
+                LoginForm form2 = new LoginForm();
+                form2.Show();
+            }
+        }
     }
 }

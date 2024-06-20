@@ -103,5 +103,10 @@ namespace GUI_KPL
             regis.Show();
             this.Hide();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
