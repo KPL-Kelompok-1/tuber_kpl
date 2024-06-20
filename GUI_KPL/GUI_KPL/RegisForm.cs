@@ -32,10 +32,21 @@ namespace GUI_KPL
             {
                 if (RegisterAsync(username, password, "user") != null)
                 {
-                    MessageBox.Show("Registrasi berhasil!");
-                    Forum forumForm = new Forum(_currentUser);
-                    forumForm.Show();
-                    this.Hide();
+                    if (_currentUser.role == "admin")
+                    {
+                        MessageBox.Show("Registrasi berhasil!");
+                        Dashboard dash = new Dashboard(_currentUser);
+                        dash.Show();
+                        this.Hide();
+                    }
+                    else if (_currentUser.role == "user")
+                    {
+                        MessageBox.Show("Registrasi berhasil!");
+                        Forum forumForm = new Forum(_currentUser);
+                        forumForm.Show();
+                        this.Hide();
+                    }
+                    
                 }
                 else
                 {

@@ -42,10 +42,21 @@ namespace GUI_KPL
 
                 if (result != null)
                 {
-                    MessageBox.Show("Login berhasil. Selamat datang " + _currentUser.username);
-                    Dashboard dash = new Dashboard(_currentUser);
-                    dash.Show();
-                    this.Hide();
+                    if(_currentUser.role == "admin")
+                    {
+                        MessageBox.Show("Login berhasil. Selamat datang " + _currentUser.username);
+                        Dashboard dash = new Dashboard(_currentUser);
+                        dash.Show();
+                        this.Hide();
+                    }
+                    else if (_currentUser.role == "user")
+                    {
+                        MessageBox.Show("Login berhasil. Selamat datang " + _currentUser.username);
+                        Dashboard dash = new Dashboard(_currentUser);
+                        dash.Show();
+                        this.Hide();
+                    }
+                  
                 }
                 else
                 {
