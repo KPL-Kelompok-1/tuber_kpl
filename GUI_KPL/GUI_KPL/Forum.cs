@@ -16,12 +16,14 @@ namespace GUI_KPL
 {
     public partial class Forum : Form
     {
-        private User currentUser;
+        private User _currentUser;
+        private string Url = "https://localhost:7238/api";
+        private client<Model.Forum> client = new client<Model.Forum>();
         public Forum(User user)
         {
             InitializeComponent();
             this.listForum();
-            this.currentUser = user;
+            this._currentUser = user;
         }
 
         public Forum()
@@ -49,8 +51,7 @@ namespace GUI_KPL
 
         private void listForum()
         {
-            client<Model.Forum> client = new client<Model.Forum>();
-            List<Model.Forum> forums = client.Get("https://localhost:7238/api/Forum");
+            List<Model.Forum> forums = client.Get(Url +"/Forum");
             listBox1.Items.Clear();
             foreach (var forum in forums)
             {
@@ -66,31 +67,11 @@ namespace GUI_KPL
             this.listForum();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_del_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Forum_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_profile_Click(object sender, EventArgs e)
         {
-            profile profileForm = new profile(this.currentUser);
+            profile profileForm = new profile(this._currentUser);
             profileForm.Show();
             this.Hide();
-        }
-
-        private void btn_forum_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_del_Click_1(object sender, EventArgs e)
@@ -105,8 +86,8 @@ namespace GUI_KPL
             {
                 int id = (int)listBox1.SelectedItem;
                 MessageBox.Show("Anda akan menghapus forum dengan id " + id);
-                client<Model.Forum> client = new client<Model.Forum>();
-                string result = client.Delete("https://localhost:7238/api/Forum/" + id + "/delete");
+                
+                string result = client.Delete(Url +"/Forum/" + id + "/delete");
                 if (result.Length > 0)
                 {
                     MessageBox.Show(result);
@@ -123,14 +104,9 @@ namespace GUI_KPL
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard(this.currentUser);
+            Dashboard dashboard = new Dashboard(this._currentUser);
             dashboard.Show();
             this.Hide();
         }

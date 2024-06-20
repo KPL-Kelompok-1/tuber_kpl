@@ -19,30 +19,6 @@ namespace GUI_KPL
             this.currentUser = u;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox13_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -62,11 +38,6 @@ namespace GUI_KPL
                 LoginForm form2 = new LoginForm();
                 form2.Show();
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label5_Click(object sender, EventArgs e)

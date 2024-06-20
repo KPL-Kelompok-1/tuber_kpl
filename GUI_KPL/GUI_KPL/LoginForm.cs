@@ -1,33 +1,28 @@
 ﻿using System;
 using System.Net.Http;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FrontEnd;
+using System.Threading.Tasks;
 
 namespace GUI_KPL
 {
     public partial class LoginForm : Form
     {
-        private HttpClient _client;
-        private User currentUser;
+        private const string Url = "https://localhost:7238/api";
+        private readonly HttpClient _client;
+        private User _currentUser;
 
         public LoginForm()
         {
             InitializeComponent();
             _client = new HttpClient();
-            this.currentUser = null;
+            _currentUser = null;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            // Event handler kosong
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -43,12 +38,12 @@ namespace GUI_KPL
 
             try
             {
-                User result = Login(username, password);
+                User result = await LoginAsync(username, password);
 
                 if (result != null)
                 {
-                    MessageBox.Show("Login berhasil. Selamat datang " + this.currentUser.username);
-                    Dashboard dash = new Dashboard(this.currentUser);
+                    MessageBox.Show("Login berhasil. Selamat datang " + _currentUser.username);
+                    Dashboard dash = new Dashboard(_currentUser);
                     dash.Show();
                     this.Hide();
                 }
@@ -61,22 +56,19 @@ namespace GUI_KPL
             {
                 MessageBox.Show("Terjadi kesalahan: " + ex.Message);
             }
-
         }
 
-
-        private User Login(String username, String password)
+        private  Task<User> LoginAsync(string username, string password)
         {
-
-            client<User> client = new client<User>();
+            var client = new client<User>();
             try
             {
-                var rsult = client.Post("https://localhost:7238/api/User/Login", new User { username = username, password = password, role = "Admin" });
-                //MessageBox.Show(rsult);
-                this.currentUser = JsonConvert.DeserializeObject<User>(rsult);
-                if (currentUser != null)
-                { 
-                    return currentUser;
+                string response =  client.Post(Url+ "/User/Login", new User { username = username, password = password, role = "Admin" });
+                _currentUser = JsonConvert.DeserializeObject<User>(response);
+
+                if (_currentUser != null)
+                {
+                    return Task.FromResult(_currentUser);
                 }
                 else
                 {
@@ -87,10 +79,7 @@ namespace GUI_KPL
             {
                 throw new Exception("Error during login: " + e.Message);
             }
-
-            return null;
         }
-
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -106,7 +95,7 @@ namespace GUI_KPL
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            // Event handler kosong
         }
     }
 }

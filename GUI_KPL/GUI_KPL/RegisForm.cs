@@ -1,34 +1,20 @@
 ﻿using System;
 using System.Net.Http;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using FrontEnd;
+using System.Threading.Tasks;
 
 namespace GUI_KPL
 {
     public partial class RegisForm : Form
     {
-        private HttpClient _client;
-        private User currentUser;
+        private User _currentUser;
+        private string Url = "https://localhost:7238/api";
 
         public RegisForm()
         {
             InitializeComponent();
-            _client = new HttpClient();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -44,14 +30,12 @@ namespace GUI_KPL
 
             try
             {
-                User user = Register(username, password, "user");
-                if (user != null)
-                {    
+                if (RegisterAsync(username, password, "user") != null)
+                {
                     MessageBox.Show("Registrasi berhasil!");
-                    Forum forumForm = new Forum(this.currentUser);
+                    Forum forumForm = new Forum(_currentUser);
                     forumForm.Show();
                     this.Hide();
-
                 }
                 else
                 {
@@ -64,34 +48,24 @@ namespace GUI_KPL
             }
         }
 
-        private User Register(String username, String password, String role)
+        private Task<User> RegisterAsync(string username, string password, string role)
         {
-            client<User> client = new client<User>();
-            string rsult = client.Post("https://localhost:7238/api/User/Register", new User { username = username, password = password, role = role }); // fetch in clinet
+            var client = new client<User>();
             try
             {
-                if (rsult != null)
+                Random rnd = new Random();
+                string result =  client.Post(this.Url + "/User/Register", new User { id= rnd.Next(10,10000) , username = username, password = password, role = role });
+                if (result != null)
                 {
-                    this.currentUser = JsonConvert.DeserializeObject<User>(rsult);
-                    return currentUser;
+                    _currentUser = JsonConvert.DeserializeObject<User>(result);
+                    return Task.FromResult(_currentUser);
                 }
             }
             catch (Exception e)
             {
-                return null;
+                MessageBox.Show("Error during registration: " + e.Message);
             }
             return null;
-        }
-
-
-        private void RegisForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            _client.Dispose();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -99,11 +73,6 @@ namespace GUI_KPL
             LoginForm login = new LoginForm();
             login.Show();
             this.Hide();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
