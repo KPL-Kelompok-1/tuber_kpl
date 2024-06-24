@@ -70,7 +70,7 @@ namespace GUI_KPL
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            if (btn_update.Text == "Edit Profile")
+            if (btn_update.Text == "Edit")
             {
                 btn_update.Text = "Update Profile";
                 input_username.Enabled = true;
@@ -104,7 +104,7 @@ namespace GUI_KPL
                     client<User> client = new client<User>();
                     string result = client.Put("https://localhost:7238/api/User", user);
 
-                    if (result != null)
+                    if (result != null && result.Length > 0)
                     {
                         MessageBox.Show(result);
                     }
@@ -118,7 +118,7 @@ namespace GUI_KPL
                     MessageBox.Show("Terjadi kesalahan: " + ex.Message);
                 }
 
-                btn_update.Text = "Edit Profile";
+                btn_update.Text = "Edit";
                 input_username.Enabled = false;
                 input_password.Enabled = false;
             }

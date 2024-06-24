@@ -65,7 +65,7 @@ namespace GUI_KPL
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Terjadi kesalahan: " + ex.Message);
+                MessageBox.Show("Login gagal. Periksa kembali username dan password Anda");
             }
         }
 
@@ -88,7 +88,7 @@ namespace GUI_KPL
             }
             catch (Exception e)
             {
-                throw new Exception("Error during login: " + e.Message);
+                throw new Exception("Login gagal. Periksa kembali username dan password Anda");
             }
         }
 
@@ -108,5 +108,13 @@ namespace GUI_KPL
         {
             // Event handler kosong
         }
+<<<<<<< HEAD
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            this.textBox2.PasswordChar = '*';   
+        }
+=======
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
     }
 }
