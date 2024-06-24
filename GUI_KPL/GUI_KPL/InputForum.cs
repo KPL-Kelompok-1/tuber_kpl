@@ -19,6 +19,7 @@ namespace GUI_KPL
     public partial class InputForum : Form
     {
         public event Action<string, string, string> DiskusiSaved;
+<<<<<<< HEAD
         private string Url = "https://localhost:7238/api";
         private Model.Forum Forum;
         private string asalDesa;
@@ -26,6 +27,10 @@ namespace GUI_KPL
         private string pertanyaan;
 
         public InputForum(Model.Forum f = null)
+=======
+        private string Url = "https://localhost:7238/api"; 
+        public InputForum()
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
         {
             InitializeComponent();
             this.Forum = f;
@@ -92,6 +97,7 @@ namespace GUI_KPL
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             string nama = input_nama.Text;
             string asalDesa = input_desa.Text;
             string pertanyaan = input_pertanyaan.Text;
@@ -110,6 +116,20 @@ namespace GUI_KPL
                     id = rnd.Next(10, 10000),
                     title = "Asal Desa: " + asalDesa + " Nama: " + nama,
                     content = "Pertanyaan: " + pertanyaan,
+=======
+            String nama = textBox1.Text;
+            String asalDesa = textBox2.Text;
+            String pertanyaan = textBox3.Text;
+            try
+            {
+                Random rnd = new Random();
+                Model.Forum forum = new Model.Forum()
+
+                {
+                    id = rnd.Next(10,10000),
+                    title = "Asal Desa   : " + asalDesa + "  Nama : " + nama,
+                    content = "Pertanyaan : " + pertanyaan,
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
                     created_at = DateTime.Now.ToString()
                 };
 
@@ -119,6 +139,7 @@ namespace GUI_KPL
                 }
 
                 client<Model.Forum> client = new client<Model.Forum>();
+<<<<<<< HEAD
                 String message = "";
                 if (this.Forum != null)
                 {
@@ -130,6 +151,9 @@ namespace GUI_KPL
                     message = "menambah diskusi";
                 }
                  
+=======
+                string result = client.Post(Url +"/Forum", forum);
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
 
                 if (result.Length > 0)
                 {
@@ -137,7 +161,11 @@ namespace GUI_KPL
                 }
                 else
                 {
+<<<<<<< HEAD
                     MessageBox.Show("Berhasil "+message, "Sukses");
+=======
+                    MessageBox.Show("Berhasil membuat diskusi baru", "Sukses");
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
                     DiskusiSaved?.Invoke(nama, asalDesa, pertanyaan);
                     this.Close();
                 }
@@ -152,11 +180,14 @@ namespace GUI_KPL
         {
 
         }
+<<<<<<< HEAD
 
         private void btn_kembali_Click(object sender, EventArgs e)
         {
             DiskusiSaved?.Invoke("", "", "");
             this.Close();
         }
+=======
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
     }
 }

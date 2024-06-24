@@ -12,7 +12,10 @@ namespace GUI_KPL
         private User _currentUser;
         private string Url = "https://localhost:7238/api";
         private client<Model.Forum> client = new client<Model.Forum>();
+<<<<<<< HEAD
         List<Model.Forum> forums = new List<Model.Forum>();
+=======
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
         public Forum(User user)
         {
             InitializeComponent();
@@ -74,6 +77,7 @@ namespace GUI_KPL
 
         private void listForum()
         {
+<<<<<<< HEAD
             forums = client.Get(Url + "/Forum");
             list_forum.Items.Clear();
             foreach (var forum in forums)
@@ -82,18 +86,31 @@ namespace GUI_KPL
                 list_forum.Items.Add(forum.title);
                 list_forum.Items.Add(forum.content);
                 list_forum.Items.Add("");
+=======
+            List<Model.Forum> forums = client.Get(Url +"/Forum");
+            listBox1.Items.Clear();
+            foreach (var forum in forums)
+            {
+                listBox1.Items.Add(forum.id);
+                listBox1.Items.Add(forum.title);
+                listBox1.Items.Add(forum.content);
+                listBox1.Items.Add("");
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             }
         }
 
         private void InputForm_DiskusiSaved(string nama, string asalDesa, string pertanyaan)
         {
             this.listForum();
+<<<<<<< HEAD
             this.setNameButton();
 
             if (this.list_forum.SelectedIndex == 1)
             {
                 this.list_forum.SelectedIndex = 0;
             }
+=======
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
         }
 
         private void btn_profile_Click(object sender, EventArgs e)
@@ -101,6 +118,7 @@ namespace GUI_KPL
             profile profileForm = new profile(this._currentUser);
             profileForm.Show();
             this.Hide();
+<<<<<<< HEAD
         }
 
         private void btn_del_Click_1(object sender, EventArgs e)
@@ -165,6 +183,45 @@ namespace GUI_KPL
             {
                 btn_sub.Text = "Edit Diskusi";
             }
+=======
+>>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
+        }
+
+        private void btn_del_Click_1(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Pilih forum yang akan dihapus");
+                return;
+            }
+
+            try
+            {
+                int id = (int)listBox1.SelectedItem;
+                MessageBox.Show("Anda akan menghapus forum dengan id " + id);
+                
+                string result = client.Delete(Url +"/Forum/" + id + "/delete");
+                if (result.Length > 0)
+                {
+                    MessageBox.Show(result);
+                }
+                else
+                {
+                    MessageBox.Show("Forum berhasil dihapus", "Sukses");
+                    this.listForum();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard(this._currentUser);
+            dashboard.Show();
+            this.Hide();
         }
     }
 }
