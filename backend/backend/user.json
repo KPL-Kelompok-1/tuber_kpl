@@ -1,1 +1,9 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [{"id":5,"username":"Djenggo","password":"test1234","role":"Admin"},{"id":9,"username":"admin","password":"admin123","role":"Admin"},{"id":10,"username":"mamat","password":"1234mama","role":"user"},{"id":100,"username":"adadawdwad","password":"dawdawdawd","role":"user"}]
+=======
+[{"id":5,"username":"Djenggo","password":"test1234","role":"Admin"},{"id":9,"username":"admin","password":"admin123","role":"admin"},{"id":10,"username":"mamat","password":"1234mama","role":"user"},{"id":100,"username":"adadawdwad","password":"dawdawdawd","role":"user"},{"id":2046,"username":"setiawan","password":"maharani","role":"user"},{"id":1243,"username":"abc123567","password":"abc12356","role":"user"}]
+>>>>>>> Stashed changes
+=======
+[{"id":5,"username":"Djenggo","password":"test1234","role":"Admin"},{"id":9,"username":"admin","password":"admin123","role":"admin"},{"id":10,"username":"mamat","password":"1234mama","role":"user"},{"id":100,"username":"adadawdwad","password":"dawdawdawd","role":"user"},{"id":2046,"username":"setiawan","password":"maharani","role":"user"},{"id":1243,"username":"abc123567","password":"abc12356","role":"user"}]
+>>>>>>> Stashed changes

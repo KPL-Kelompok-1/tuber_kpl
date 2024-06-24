@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Model
 {
@@ -6,13 +8,6 @@ namespace Model
     {
         public int id { get; set; }
         public string title { get; set; }
-        public string content { get; set; }
-        public string created_at { get; set; }
-    }
-
-    public class Comment
-    {
-        public int id { get; set; }
         public string content { get; set; }
         public string created_at { get; set; }
     }

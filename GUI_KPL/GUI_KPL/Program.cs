@@ -16,7 +16,7 @@ namespace GUI_KPL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegisForm());
+            Application.Run(new LoginForm());
         }
     }
 }
