@@ -108,13 +108,10 @@ namespace GUI_KPL
         {
             // Event handler kosong
         }
-<<<<<<< HEAD
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             this.textBox2.PasswordChar = '*';   
         }
-=======
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
     }
 }

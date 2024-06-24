@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,40 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-=======
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.buttonLogout = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             this.SuspendLayout();
             // 
             // panel1
@@ -104,11 +69,7 @@
             this.panel1.BackColor = System.Drawing.Color.Azure;
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
-<<<<<<< HEAD
             this.panel1.Controls.Add(this.button1);
-=======
-            this.panel1.Controls.Add(this.buttonLogout);
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -118,7 +79,6 @@
             this.panel1.Size = new System.Drawing.Size(178, 466);
             this.panel1.TabIndex = 0;
             // 
-<<<<<<< HEAD
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.CadetBlue;
@@ -131,42 +91,6 @@
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-=======
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::GUI_KPL.Properties.Resources.Forum;
-            this.pictureBox4.Location = new System.Drawing.Point(26, 168);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 38);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click_1);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GUI_KPL.Properties.Resources.Home;
-            this.pictureBox3.Location = new System.Drawing.Point(25, 55);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 38);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // buttonLogout
-            // 
-            this.buttonLogout.BackColor = System.Drawing.Color.CadetBlue;
-            this.buttonLogout.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.ForeColor = System.Drawing.Color.White;
-            this.buttonLogout.Location = new System.Drawing.Point(26, 371);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(126, 43);
-            this.buttonLogout.TabIndex = 1;
-            this.buttonLogout.Text = "Logout";
-            this.buttonLogout.UseVisualStyleBackColor = false;
-            this.buttonLogout.Click += new System.EventHandler(this.button1_Click_1);
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             // 
             // label6
             // 
@@ -201,20 +125,6 @@
             this.label4.Text = "Dashboard";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-<<<<<<< HEAD
-=======
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 109);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CadetBlue;
@@ -225,31 +135,6 @@
             this.panel2.Size = new System.Drawing.Size(856, 73);
             this.panel2.TabIndex = 5;
             // 
-<<<<<<< HEAD
-=======
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = global::GUI_KPL.Properties.Resources.Exit;
-            this.pictureBox14.Location = new System.Drawing.Point(709, 15);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 2;
-            this.pictureBox14.TabStop = false;
-            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::GUI_KPL.Properties.Resources.profile;
-            this.pictureBox6.Location = new System.Drawing.Point(780, 15);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightYellow;
@@ -270,19 +155,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Kalender";
             // 
-<<<<<<< HEAD
-=======
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(14, 44);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(134, 135);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 0;
-            this.pictureBox13.TabStop = false;
-            // 
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightYellow;
@@ -314,7 +186,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Status Laporan";
             // 
-<<<<<<< HEAD
             // pictureBox13
             // 
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
@@ -325,8 +196,6 @@
             this.pictureBox13.TabIndex = 0;
             this.pictureBox13.TabStop = false;
             // 
-=======
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
@@ -357,7 +226,6 @@
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
             // 
-<<<<<<< HEAD
             // pictureBox14
             // 
             this.pictureBox14.Image = global::GUI_KPL.Properties.Resources.Exit;
@@ -413,8 +281,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-=======
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -433,7 +299,6 @@
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-<<<<<<< HEAD
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -448,22 +313,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-=======
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             this.ResumeLayout(false);
 
         }
@@ -485,11 +334,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
-=======
-        private System.Windows.Forms.Button buttonLogout;
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox4;

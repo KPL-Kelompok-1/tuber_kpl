@@ -74,11 +74,7 @@ namespace GUI_KPL
             }
             catch (Exception e)
             {
-<<<<<<< HEAD
                 MessageBox.Show("Register gagal");
-=======
-                MessageBox.Show("Error during registration: " + e.Message);
->>>>>>> 0825a43f8dbff7975783c84dfb55d272e1253ae2
             }
             return null;
         }
