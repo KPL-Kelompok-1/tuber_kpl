@@ -20,7 +20,7 @@ namespace GUI_KPL
         }
 
 
-        private void label6_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e) // ke page forum
         {
             Forum forum1 = new Forum(this.currentUser);
             forum1.Show();
@@ -28,7 +28,7 @@ namespace GUI_KPL
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e) // button exit
         {
             var result = MessageBox.Show("Anda ingin keluar dari aplikasi?", "Konfirmasi Keluar", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -40,14 +40,14 @@ namespace GUI_KPL
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e) // ke page profil
         {
             profile profil = new profile(this.currentUser);
             profil.Show();
             this.Hide();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e) // ke page profil
         {
             profile profil = new profile(this.currentUser);
             profil.Show();
@@ -56,29 +56,29 @@ namespace GUI_KPL
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            // event kontroller kosong
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
+            // event kontroller kosong
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e) // ke page profil
         {
             profile profil = new profile(this.currentUser);
             profil.Show();
             this.Hide();
         }
 
-        private void pictureBox4_Click_1(object sender, EventArgs e)
+        private void pictureBox4_Click_1(object sender, EventArgs e) // ke page forum
         {
             Forum forum1 = new Forum(this.currentUser);
             forum1.Show();
             this.Hide();
         }
 
-        private void pictureBox14_Click(object sender, EventArgs e)
+        private void pictureBox14_Click(object sender, EventArgs e) // logout
         {
             var result = MessageBox.Show("Anda ingin keluar dari aplikasi?", "Konfirmasi Keluar", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -91,7 +91,7 @@ namespace GUI_KPL
 
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void pictureBox6_Click(object sender, EventArgs e) // ke page profil
         {
             profile profil = new profile(this.currentUser);
             profil.Show();
